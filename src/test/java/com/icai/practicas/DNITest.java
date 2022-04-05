@@ -7,27 +7,26 @@ public class DNITest {
 
     @Test
     public void testingDNI() {
-        // DNI que no son válidos
-        DNI dni = new DNI("00000000T");
+        //FORMATO ERRONEO
+        dni = new DNI("123456");
         assertEquals(false, dni.validar());
-        dni = new DNI("00000001R");
+        dni = new DNI("f123467Z");
+        assertEquals(false, dni.validar());
+        dni = new DNI("555555555");
+        assertEquals(false, dni.validar());
+
+        // DNI NO VALIDO
+        DNI dni = new DNI("00000001T");
+        assertEquals(false, dni.validar());
+        dni = new DNI("00000011R");
         assertEquals(false, dni.validar());
         dni = new DNI("99999999R");
         assertEquals(false, dni.validar());
 
-        //no cumplen el formato
-        dni = new DNI("12345");
-        assertEquals(false, dni.validar());
-        dni = new DNI("f1234a67Z");
-        assertEquals(false, dni.validar());
-        dni = new DNI("444444444");
-        assertEquals(false, dni.validar());
-
-
-        // DNI válidos
-        dni = new DNI("81356846G");
+        // DNI VALIDOS
+        dni = new DNI("21700364W");
         assertEquals(true, dni.validar());
-        dni = new DNI("81356846G");
+        dni = new DNI("37153196P");
         assertEquals(true, dni.validar());
     }
 }
