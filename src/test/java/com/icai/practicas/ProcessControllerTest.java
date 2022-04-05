@@ -26,7 +26,6 @@ public class ProcessControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
-
     @Test
     public void testing_processController_step1_then_ok(){
         //Given
